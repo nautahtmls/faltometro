@@ -235,10 +235,6 @@ main > .fotos > a > img:hover {
   transform: scale(1.15)
 }
 
-main > #explicao a{
-    font-family: Poppins, Arial, Helvetica, sans-serif;
-}
-
 /*
     Página de explicação
 */
@@ -247,6 +243,14 @@ main > #explicao a{
     width: 37%;
     margin: auto;
     display: block
+}
+
+img#formula {
+    max-width: 500px;
+}
+
+li {
+    margin: 10px 0px 10px 30px;
 }
 
 .voltarsite{
@@ -277,4 +281,8 @@ main > #explicao a{
     height: 20px;
     margin-left: 4px;
     margin-bottom: -3px;
+}
+
+video {
+    max-width: 550px;
 }

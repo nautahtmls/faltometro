@@ -64,15 +64,15 @@
       </div>
 
       <p id="texto_escolha">
-        Agora digite a sua porcentagem de faltas que voce tem nessa área:
+        Agora digite quantas horas você tem de falta nessa área:
       </p>
 
       <input
         id="input_porcentagem"
         type="number"
-        placeholder="0 a 25"
+        placeholder="Horas em decimal"
         min="0"
-        max="25"
+        max="60"
         step="1"
         required
       />
@@ -193,9 +193,11 @@
       </div>
 
       <footer>
-        <a href="explicacao.html" id="link_pagina2"
-          ><p>Como funciona o cálculo?</p></a
+        <a href="explicacao.html" id="link_pagina2" class="links"
+         ><p>Como funciona o cálculo?</p></a
         >
+
+        <a href="como.html" class="links">Como consigo as minhas faltas?</a>
       </footer>
 
       <script>
@@ -216,11 +218,7 @@
             txt.innerHTML = "Digite uma porcentagem válida!";
             return;
           }
-          if (quanto >= 25) {
-            txt.style.color = "red";
-            txt.innerHTML = "Você já atingiu o limite de faltas!";
-            return;
-          }
+
           var area = areaSelecionada.value;
           var horas = {
             matematica: 120,
@@ -232,25 +230,16 @@
             pa: 120,
             todas: 1000,
           };
-          var totalHoras;
-          if (area === "todas") {
-            var somaAulas = 0;
-            for (var key in horas) {
-              var aulas = ((((25 - quanto) * horas[key]) / 1000) * 60) / 50;
-              somaAulas += aulas;
-            }
-            txt.style.color = "#125189";
-            txt.innerHTML = `Você pode faltar ${Math.trunc(aulas)} aulas no total!`;
-          }
+
           totalHoras = horas[area];
           if (!totalHoras) {
             txt.style.color = "#125189";
             txt.innerHTML = "Área inválida!";
             return;
           }
-          var aulas = ((((25 - quanto) * totalHoras) / 100) * 60) / 50;
+          var aulas = ((0.25 * totalHoras) - quanto ) * 60 / 50;
           txt.style.color = "#125189";
-          if (Math.trunc(aulas) == 0) {
+          if (Math.trunc(aulas) <= 0) {
             txt.style.color = "red";
             txt.innerHTML = "Você já atingiu o limite de faltas!";
             return;

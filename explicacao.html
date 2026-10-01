@@ -25,16 +25,19 @@
             <img  name = "imagem_emoji" id = "imagem_emoji" src="fotos/pensando_1.png" alt="pensano">
         </div>
         <div class = "texto_explicacao">
-            <p>O nosso site pega primeiramente a informação <strong>de qual área você escolheu</strong>, pois assim ele ja sabe qual o valor de horas totais ele deve escolher, já que, cada área tem uma.
-            <p>Depois disso, ele usa a informação de <strong>quantos % (de 0 a 25) de aulas</strong> você faltou naquela área.</p>
-            <p>Então, ele faz a conta de <strong>quantas horas você pode faltar naquela área</strong>, e <strong>subtrai pela porcetagem de horas que você faltou.</strong></p>
-            <p>Por último, ele pega o <strong>resultado dessa subtração</strong> (que é a porcentagem de quantas aulas você pode faltar) e faz a <strong>regra de três para descobrir quanto isso equivale em aulas.</strong></p>
+            <p>O cálculo é bem simples, ele funciona em base da fórmula abaixo:</p>
+            <img src="fotos/formula.png" alt="(((0,25 x T) - Q) x 60) / 50" id="formula">
+            <p>A fórmula parece assustadora de início, mas na verdade é bem simples, explicando passo a passo:</p>
+            <ol>
+                <li><strong>0,25 * T</strong> é onde pegamos quantas aulas pode-se faltar dependendo da área, sendo 0,25 a representação de 25% e o T representando o total de horas;</li>
+                <li><strong>- Q</strong> o Q representa a quantidade de horas de falta que você já tem, então ele só subtrai o quanto que você pode faltar pelo quanto você já faltou;</li>
+                <li><strong>x 60 / 50</strong> aqui serve para transformar o resultado da conta em quantidade de aulas, x 60 para o resultado ser contado como horas, e depois é dividido por 50 para simplificar em unidades de aulas (já que, cada aula tem 50 minutos).</li>
+            </ol>
+            <p>Uma coisa importante de se atentar mas que não está na fórmula, é de sempre arredondar o resultado para baixo, por exemplo, se o resultado der 1,8 aula, sabemos que só podemos faltar aulas inteiramente, então não precisamos de valores decimais, mas, também não podemos simplesmente arredondar 1,8 para 2, se não você vai faltar mais do que você poderia. Para corrigir isso, sempre arredonde o valor para baixo, como nesse caso de 1,8 que ficaria 1, para garantir seguramente quantas aulas você pode faltar, sem passar do limite.</p>
         </div>
-
         <div class="botao_voltar">
             <button onclick="window.history.back()" id="botao_voltar">Voltar <span><img src="fotos/seta.png" alt="seta"></span> </button>
         </div>
     </main>
-
 </body>
 </html>
