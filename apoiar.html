@@ -27,12 +27,22 @@
         <div class = "texto_explicacao">
             <p>Gostou do nosso projeto? Nos ajude a mantê-lo no ar! Doe no pix a quantidade que quiser e que achar justo no QR code abaixo, daqui a um tempo podemos perder o domímio do site e o acesso ficará dificil para os alunos.
             </p>
-            <img src="fotos/qrcode.png" alt="qr code pix" width="200px">
+            <img src="fotos/qrcode.png" alt="qr code pix" width="200px"> <br>
+            <button id="copiar">Clique para Pix copia e cola</button>
             <p>Qualquer valor ajuda!</p>
         </div>
         <div class="botao_voltar">
             <button onclick="window.history.back()" id="botao_voltar">Voltar <span><img src="fotos/seta.png" alt="seta"></span> </button>
         </div>
+
+        <script>
+            const button = document.querySelector("#copiar");
+
+            button.addEventListener("click", () => {
+                navigator.clipboard.writeText("00020126360014br.gov.bcb.pix0114+55129923195325204000053039865802BR5901N6001C62140510Faltometro630454D6")
+                window.alert('copiado com sucesso')
+            })
+        </script>
     </main>
 </body>
 </html>
