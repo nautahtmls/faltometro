@@ -285,13 +285,13 @@
           var res_pa = document.querySelector("div#res_pa");
 
           if (
-            mat > 36 ||
-            lin > 60 ||
-            hum > 48 ||
-            nat > 36 ||
-            tec > 72 ||
-            pv > 12 ||
-            pa > 36
+            mat > 30 ||
+            lin > 50 ||
+            hum > 40 ||
+            nat > 30 ||
+            tec > 60 ||
+            pv > 10 ||
+            pa > 30
           ) {
             res_pa.style.color = "red";
             res_mat.innerHTML = "";
@@ -305,75 +305,137 @@
             return;
           }
 
-          if (mat >= 1) {
-            var totalhora = 120;
-            var res =
-              Math.floor(((mat * 50) / (totalhora * 60)) * 100 * 100) / 100;
+          if (mat === 1) {
+            res_mat.innerHTML = `+50 minutos de falta em Matemática`;
+          } else if (mat % 6 === 0) {
+            const res = mat * 0.833333333333333333333;
+            const horas = Math.floor(res)
+            res_mat.innerHTML = `+${horas} horas de faltas em Matemática`;
 
-            res_mat.innerHTML = `+${res}% de faltas em Matemática`;
+          }else if (mat >= 1) {
+            
+            const res = mat * 0.833333333333333333333;
+            const horas = Math.floor(res)
+            const minutos = Number(Math.round((res - horas) * 60))
+
+            res_mat.innerHTML = `+${horas}h${minutos}m de faltas em Matemática`;
+
           } else {
-            res_mat.innerHTML = "";
+            res_mat.innerHTML = ""
           }
 
-          if (lin >= 1) {
-            var totalhora = 200;
-            var res =
-              Math.floor(((lin * 50) / (totalhora * 60)) * 100 * 100) / 100;
+          if (lin === 1) {
+            res_lin.innerHTML = `+50 minutos de falta em Linguagens`;
+          } else if (lin % 6 === 0) {
+            const res = lin * 0.833333333333333333333;
+            const horas = Math.floor(res)
+            res_lin.innerHTML = `+${horas} horas de faltas em Linguagens`;
 
-            res_lin.innerHTML = `+${res}% de faltas em Linguagens`;
+          }else if (lin >= 1) {
+            
+            const res = lin * 0.833333333333333333333;
+            const horas = Math.floor(res)
+            const minutos = Number(Math.round((res - horas) * 60))
+
+            res_lin.innerHTML = `+${horas}h${minutos}m de faltas em Linguagens`;
+
           } else {
-            res_lin.innerHTML = "";
+            res_lin.innerHTML = ""
           }
 
-          if (hum >= 1) {
-            var totalhora = 160;
-            var res =
-              Math.floor(((hum * 50) / (totalhora * 60)) * 100 * 100) / 100;
+          if (hum === 1) {
+            res_hum.innerHTML = `+50 minutos de falta em Humanas`;
+          } else if (hum % 6 === 0) {
+            const res = hum * 0.833333333333333333333;
+            const horas = Math.floor(res)
+            res_lin.innerHTML = `+${horas} horas de faltas em Humanas`;
 
-            res_hum.innerHTML = `+${res}% de faltas em Humanas`;
+          }else if (hum >= 1) {
+            
+            const res = hum * 0.833333333333333333333;
+            const horas = Math.floor(res)
+            const minutos = Number(Math.round((res - horas) * 60))
+
+            res_hum.innerHTML = `+${horas}h${minutos}m de faltas em Humanas`;
+
           } else {
-            res_hum.innerHTML = "";
+            res_hum.innerHTML = ""
           }
 
-          if (nat >= 1) {
-            var totalhora = 120;
-            var res =
-              Math.floor(((nat * 50) / (totalhora * 60)) * 100 * 100) / 100;
+          if (nat === 1) {
+            res_nat.innerHTML = `+50 minutos de falta em Natureza`;
+          } else if (nat % 6 === 0) {
+            const res = nat * 0.833333333333333333333;
+            const horas = Math.floor(res)
+            res_nat.innerHTML = `+${horas} horas de faltas em Natureza`;
 
-            res_nat.innerHTML = `+${res}% de faltas em Natureza`;
+          }else if (nat >= 1) {
+            
+            const res = nat * 0.833333333333333333333;
+            const horas = Math.floor(res)
+            const minutos = Number(Math.round((res - horas) * 60))
+
+            res_nat.innerHTML = `+${horas}h${minutos}m de faltas em Natureza`;
+
           } else {
-            res_nat.innerHTML = "";
+            res_nat.innerHTML = ""
           }
 
-          if (tec >= 1) {
-            var totalhora = 240;
-            var res =
-              Math.floor(((tec * 50) / (totalhora * 60)) * 100 * 100) / 100;
+          if (tec === 1) {
+            res_tec.innerHTML = `+50 minutos de falta em FTP`;
+          } else if (tec % 6 === 0) {
+            const res = tec * 0.833333333333333333333;
+            const horas = Math.floor(res)
+            res_tec.innerHTML = `+${horas} horas de faltas em FTP`;
 
-            res_tec.innerHTML = `+${res}% de faltas no Técnico`;
+          }else if (tec >= 1) {
+            
+            const res = tec * 0.833333333333333333333;
+            const horas = Math.floor(res)
+            const minutos = Number(Math.round((res - horas) * 60))
+
+            res_tec.innerHTML = `+${horas}h${minutos}m de faltas em FTP`;
+
           } else {
-            res_tec.innerHTML = "";
+            res_tec.innerHTML = ""
           }
 
-          if (pv >= 1) {
-            var totalhora = 40;
-            var res =
-              Math.floor(((pv * 50) / (totalhora * 60)) * 100 * 100) / 100;
+          if (pv === 1) {
+            res_pv.innerHTML = `+50 minutos de falta em PV`;
+          } else if (pv % 6 === 0) {
+            const res = pv * 0.833333333333333333333;
+            const horas = Math.floor(res)
+            res_pv.innerHTML = `+${horas} horas de faltas em PV`;
 
-            res_pv.innerHTML = `+${res}% de faltas em Projeto de Vida`;
+          }else if (pv >= 1) {
+            
+            const res = pv * 0.833333333333333333333;
+            const horas = Math.floor(res)
+            const minutos = Number(Math.round((res - horas) * 60))
+
+            res_pv.innerHTML = `+${horas}h${minutos}m de faltas em PV`;
+
           } else {
-            res_pv.innerHTML = "";
+            res_pv.innerHTML = ""
           }
 
-          if (pa >= 1) {
-            var totalhora = 120;
-            var res =
-              Math.floor(((pa * 50) / (totalhora * 60)) * 100 * 100) / 100;
+          if (pa === 1) {
+            res_pa.innerHTML = `+50 minutos de falta em PA`;
+          } else if (pa % 6 === 0) {
+            const res = pa * 0.833333333333333333333;
+            const horas = Math.floor(res)
+            res_pa.innerHTML = `+${horas} horas de faltas em PA`;
 
-            res_pa.style.color = "#125189";
-            res_pa.innerHTML = `+${res}% de faltas em Projeto do ano`;
+          }else if (pa >= 1) {
+            
+            const res = pa * 0.833333333333333333333;
+            const horas = Math.floor(res)
+            const minutos = Number(Math.round((res - horas) * 60))
+
+            res_pa.innerHTML = `+${horas}h${minutos}m de faltas em PA`;
+
           } else {
-            res_pa.innerHTML = "";
+            res_pa.innerHTML = ""
           }
         }
       </script>
