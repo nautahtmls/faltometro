@@ -307,7 +307,7 @@
 
           if (mat === 1) {
             res_mat.innerHTML = `+50 minutos de falta em Matemática`;
-          } else if (mat % 6 === 0) {
+          } else if (mat > 1 && mat % 6 === 0) {
             const res = mat * 0.833333333333333333333;
             const horas = Math.floor(res)
             res_mat.innerHTML = `+${horas} horas de faltas em Matemática`;
@@ -326,7 +326,7 @@
 
           if (lin === 1) {
             res_lin.innerHTML = `+50 minutos de falta em Linguagens`;
-          } else if (lin % 6 === 0) {
+          } else if (lin > 1 && lin % 6 === 0) {
             const res = lin * 0.833333333333333333333;
             const horas = Math.floor(res)
             res_lin.innerHTML = `+${horas} horas de faltas em Linguagens`;
@@ -345,7 +345,7 @@
 
           if (hum === 1) {
             res_hum.innerHTML = `+50 minutos de falta em Humanas`;
-          } else if (hum % 6 === 0) {
+          } else if (hum > 1 && hum % 6 === 0) {
             const res = hum * 0.833333333333333333333;
             const horas = Math.floor(res)
             res_lin.innerHTML = `+${horas} horas de faltas em Humanas`;
@@ -364,7 +364,7 @@
 
           if (nat === 1) {
             res_nat.innerHTML = `+50 minutos de falta em Natureza`;
-          } else if (nat % 6 === 0) {
+          } else if (nat > 1 && nat % 6 === 0) {
             const res = nat * 0.833333333333333333333;
             const horas = Math.floor(res)
             res_nat.innerHTML = `+${horas} horas de faltas em Natureza`;
@@ -383,7 +383,7 @@
 
           if (tec === 1) {
             res_tec.innerHTML = `+50 minutos de falta em FTP`;
-          } else if (tec % 6 === 0) {
+          } else if (tec > 1 && tec % 6 === 0) {
             const res = tec * 0.833333333333333333333;
             const horas = Math.floor(res)
             res_tec.innerHTML = `+${horas} horas de faltas em FTP`;
@@ -402,7 +402,7 @@
 
           if (pv === 1) {
             res_pv.innerHTML = `+50 minutos de falta em PV`;
-          } else if (pv % 6 === 0) {
+          } else if (pa > 1 && pv % 6 === 0) {
             const res = pv * 0.833333333333333333333;
             const horas = Math.floor(res)
             res_pv.innerHTML = `+${horas} horas de faltas em PV`;
@@ -420,10 +420,12 @@
           }
 
           if (pa === 1) {
+            res_pa.style = 'color: #125189'
             res_pa.innerHTML = `+50 minutos de falta em PA`;
-          } else if (pa % 6 === 0) {
+          } else if (pa > 1 && pa % 6 === 0) {
             const res = pa * 0.833333333333333333333;
             const horas = Math.floor(res)
+            res_pa.style = 'color: #125189'
             res_pa.innerHTML = `+${horas} horas de faltas em PA`;
 
           }else if (pa >= 1) {
@@ -432,8 +434,8 @@
             const horas = Math.floor(res)
             const minutos = Number(Math.round((res - horas) * 60))
 
+            res_pa.style = 'color: #125189'
             res_pa.innerHTML = `+${horas}h${minutos}m de faltas em PA`;
-
           } else {
             res_pa.innerHTML = ""
           }
